@@ -2,7 +2,7 @@ import LoginDTO from "./LoginDTO";
 import GoogleAuthService from "../../InfraStructure/Service/GoogleAuthService";
 import InfrastructureAuthService from "../../InfraStructure/Service/AuthService";
 import IUserRepository from "../../Domain/Entities/UserEntity/IUserRepository";
-import HttpResp from "../Utils/HttpResponse";
+import HttpResp from "../../../HTTP/utils/HttpResponse";
 import AppError from "../Utils/AppError";
 import HttpStatusCode from "../Utils/HttpStatusCode";
 export default class AuthService {

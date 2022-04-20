@@ -2,7 +2,7 @@ import CreateUserDTO from "./CreateUserDTO";
 import IUserRepository from "../../Domain/Entities/UserEntity/IUserRepository";
 import AuthService from "../../InfraStructure/Service/AuthService";
 import AppError from "../Utils/AppError";
-import HttpResp from "../Utils/HttpResponse";
+import HttpResp from "../../../HTTP/utils/HttpResponse";
 import HttpStatusCode from "../Utils/HttpStatusCode";
 
 export default class UserService {

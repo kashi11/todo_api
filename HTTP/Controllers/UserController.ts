@@ -1,6 +1,6 @@
 import CreateUserDTO from "../../App/Application/User/CreateUserDTO";
 import UserService from "../../App/Application/User/UserService";
-import HttpResp from "../../App/Application/Utils/HttpResponse";
+import HttpResp from "../utils/HttpResponse";
 
 class UserController {
   constructor(private readonly userService: UserService) {}

@@ -1,5 +1,5 @@
 import AuthService from "../../App/InfraStructure/Service/AuthService";
-import HttpResp from "../../App/Application/Utils/HttpResponse";
+import HttpResp from "../utils/HttpResponse";
 import HttpStatusCode from "../../App/Application/Utils/HttpStatusCode";
 import CreateUserDTO from "../../App/Application/User/CreateUserDTO";
 import UserService from "../../App/Application/User/UserService";

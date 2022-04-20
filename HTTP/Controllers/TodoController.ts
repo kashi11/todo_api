@@ -1,7 +1,7 @@
 import AddTodoDTO from "../../App/Application/Todo/AddTodoDTO";
 import GetAllTodoDTO from "../../App/Application/Todo/GetAllTodosDTO";
 import TodoService from "../../App/Application/Todo/TodoService";
-import HttpResp from "../../App/Application/Utils/HttpResponse";
+import HttpResp from "../utils/HttpResponse";
 class TodoController {
   constructor(private readonly todoService: TodoService) {}
 

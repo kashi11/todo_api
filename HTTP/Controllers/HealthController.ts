@@ -1,4 +1,4 @@
-import HttpResp from "../../App/Application/Utils/HttpResponse";
+import HttpResp from "../utils/HttpResponse";
 import HttpStatusCode from "../../App/Application/Utils/HttpStatusCode";
 
 export default class HealthController {

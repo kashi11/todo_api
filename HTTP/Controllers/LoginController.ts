@@ -1,6 +1,6 @@
 import LoginDTO from "../../App/Application/Auth/LoginDTO";
 import AuthService from "../../App/Application/Auth/AuthService";
-import HttpResp from "../../App/Application/Utils/HttpResponse";
+import HttpResp from "../utils/HttpResponse";
 
 class LoginController {
   constructor(private readonly authService: AuthService) {}

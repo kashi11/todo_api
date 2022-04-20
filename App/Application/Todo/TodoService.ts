@@ -1,6 +1,6 @@
 import PaginationData from "../../InfraStructure/Utils/PaginationData";
 import ITodoRepository from "../../Domain/Entities/TodoEntity/ITodoRepository";
-import HttpResp from "../Utils/HttpResponse";
+import HttpResp from "../../../HTTP/utils/HttpResponse";
 import AddTodoDTO from "./AddTodoDTO";
 import GetAllTodoDTO from "./GetAllTodosDTO";
 import HttpStatusCode from "../Utils/HttpStatusCode";
