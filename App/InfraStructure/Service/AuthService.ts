@@ -15,7 +15,7 @@ export default new (class InfrastructureAuthService {
     return await bycrypt.hash(originalString, 10);
   };
 
-  compareHash = async (hash: string, stringToCompare: string): Promise<any> => {
+  compareHash = async (hash: string, stringToCompare: string): Promise<boolean> => {
     return await bycrypt.compare(hash, stringToCompare);
   };
 })();

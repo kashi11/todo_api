@@ -1,8 +1,10 @@
 import HttpResp from "../utils/HttpResponse";
 import HttpStatusCode from "../../App/Application/Utils/HttpStatusCode";
+import { Request, Response } from "express";
+
 
 export default class HealthController {
-  healthCheck = async (req: any, res: any) => {
+  healthCheck = async (_req: Request, res: Response) => {
     return HttpResp.convertToExpress(res, HttpResp.create(HttpStatusCode.OK, { message: "Server is up and running" }));
   };
 }
