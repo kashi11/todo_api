@@ -1,4 +1,5 @@
-import IUserRepository from "../../../Domain/Entities/UserEntity/IUserRepository";
+import IUserRepository from "../../../Domain/Entities/IRepositories/IUserRepository";
+import { DatabaseConnectionError } from "../../../Domain/Exception";
 import { DbDrivers } from "../../Utils/Constants";
 import UserRepositoryMongo from "../Mongoose/UserRepositoryMongo";
 import UserRepositoryMySql from "../MySql/UserRepositoryMySql";
@@ -11,7 +12,7 @@ export default class AbstractUserRepositoryFactory {
       case DbDrivers.SEQUELIZE:
         return new UserRepositoryMySql();
       default:
-        throw new Error("Invalid db driver");
+        throw new DatabaseConnectionError('Invalid database driver selected.');
     }
   };
 }

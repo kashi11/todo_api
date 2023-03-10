@@ -1,10 +1,10 @@
 import LoginDTO from "./LoginDTO";
 import GoogleAuthService from "../../InfraStructure/Service/GoogleAuthService";
 import InfrastructureAuthService from "../../InfraStructure/Service/AuthService";
-import IUserRepository from "../../Domain/Entities/UserEntity/IUserRepository";
+import IUserRepository from "../../Domain/Entities/IRepositories/IUserRepository";
 import HttpResp from "../../../HTTP/utils/HttpResponse";
 import AppError from "../Utils/AppError";
-import HttpStatusCode from "../Utils/HttpStatusCode";
+import HttpStatusCode from "../Utils/ResponseStatus";
 
 type TLoginWithPassword = {
   token: string

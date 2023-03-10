@@ -1,9 +1,11 @@
-export default class UserEntity {
-  public email: string;
-  public password: string;
-  public name: string;
-  public userId: string;
-  public isGoogleUser: boolean;
+import { IUserEntity } from "./IUserEntity";
+
+export default class UserEntity implements IUserEntity {
+  email: string
+  password: string
+  name: string
+  userId: string
+  isGoogleUser: boolean
 
   constructor(
     email: string,
@@ -19,7 +21,7 @@ export default class UserEntity {
     this.isGoogleUser = isGoogleUser;
   }
 
-  static createFromInput(userObj: any): UserEntity {
+  static createFromInput(userObj: IUserEntity): UserEntity {
     const user = new UserEntity(
       userObj.email,
       userObj.password,
@@ -30,7 +32,7 @@ export default class UserEntity {
     return user;
   }
 
-  static createFromDatabase(userObj: any): UserEntity {
+  static createFromDatabase(userObj: IUserEntity): UserEntity {
     const user = new UserEntity(
       userObj.email,
       userObj.password,

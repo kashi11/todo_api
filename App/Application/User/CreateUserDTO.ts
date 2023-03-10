@@ -1,16 +1,18 @@
+import { IUserEntity } from "../../Domain/Entities/UserEntity/IUserEntity";
 import UserEntity from "../../Domain/Entities/UserEntity/UserEntity";
 import { generateId } from "../../InfraStructure/Utils/GenerateUuid";
 
 class CreateUserDTO {
   public user: UserEntity;
 
-  constructor(request: any) {
-    const params = request.body;
-    this.user = UserEntity.createFromInput(params);
-    this.user.setUserId(generateId());
-    if (!params.password) {
-      this.user.setPassword(`${Math.random()}`);
-    }
+  constructor(body: IUserEntity) {
+    this.user = UserEntity.createFromInput(body);
+  }
+
+  static create(body: IUserEntity): CreateUserDTO {
+    const userId = generateId();
+    body.password = body.password || `${Math.random()}`
+    return new CreateUserDTO({ ...body, userId })
   }
 }
 

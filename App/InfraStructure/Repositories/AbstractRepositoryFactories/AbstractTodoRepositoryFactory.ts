@@ -1,4 +1,4 @@
-import ITodoRepository from "../../../Domain/Entities/TodoEntity/ITodoRepository";
+import ITodoRepository from "../../../Domain/Entities/IRepositories/ITodoRepository";
 import { DbDrivers } from "../../Utils/Constants";
 import TodoRepositoryMongo from "../Mongoose/TodoRepositoryMongo";
 import TodoRepositoryMySQl from "../MySql/TodoRepositoryMySql";

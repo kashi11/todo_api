@@ -1,9 +1,9 @@
 import PaginationData from "../../InfraStructure/Utils/PaginationData";
-import ITodoRepository from "../../Domain/Entities/TodoEntity/ITodoRepository";
+import ITodoRepository from "../../Domain/Entities/IRepositories/ITodoRepository";
 import HttpResp from "../../../HTTP/utils/HttpResponse";
 import AddTodoDTO from "./AddTodoDTO";
 import GetAllTodoDTO from "./GetAllTodosDTO";
-import HttpStatusCode from "../Utils/HttpStatusCode";
+import HttpStatusCode from "../Utils/ResponseStatus";
 
 export default class TodoService {
   constructor(private readonly todoRepository: ITodoRepository) {}

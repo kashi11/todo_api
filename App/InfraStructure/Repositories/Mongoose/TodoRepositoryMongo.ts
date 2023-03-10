@@ -1,4 +1,4 @@
-import ITodoRepository from "../../../Domain/Entities/TodoEntity/ITodoRepository";
+import ITodoRepository from "../../../Domain/Entities/IRepositories/ITodoRepository";
 import TodoEntity from "../../../Domain/Entities/TodoEntity/TodoEntity";
 import TodoModel from "../../Database/Mongoose/Models/Todo";
 import PaginationData from "../../Utils/PaginationData";

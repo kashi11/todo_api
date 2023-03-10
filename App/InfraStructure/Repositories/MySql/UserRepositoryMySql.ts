@@ -1,21 +1,20 @@
-import AppError from "../../../Application/Utils/AppError";
-import HttpStatusCode from "../../../Application/Utils/HttpStatusCode";
-import IUserRepository from "../../../Domain/Entities/UserEntity/IUserRepository";
+import IUserRepository from "../../../Domain/Entities/IRepositories/IUserRepository";
 import UserEntity from "../../../Domain/Entities/UserEntity/UserEntity";
+import { AlreadyExistsError, NotFoundError } from "../../../Domain/Exception";
 import sequelizeDb from "../../Database/Sequelize/models";
 
 export default class UserRepositoryMySql implements IUserRepository {
   async fetchByEmail(email: string): Promise<UserEntity> {
     const user = await sequelizeDb.User.findOne({ where: { email } });
     if (!user) {
-      throw new AppError("User not found", HttpStatusCode.NOT_FOUND);
+      throw new NotFoundError('User not found');
     }
     return UserEntity.createFromDatabase(user);
   }
 
-  async userAlreadyExists(email: string): Promise<Boolean> {
+  async userAlreadyExists(email: string): Promise<void> {
     const user = await await sequelizeDb.User.findOne({ where: { email } });
-    return !!user;
+    if (!user) throw new AlreadyExistsError('User already exist.')
   }
 
   async createUser(user: UserEntity): Promise<Boolean> {

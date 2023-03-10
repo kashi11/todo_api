@@ -1,11 +1,12 @@
-import IUserRepository from "../../../Domain/Entities/UserEntity/IUserRepository";
+import IUserRepository from "../../../Domain/Entities/IRepositories/IUserRepository";
 import UserEntity from "../../../Domain/Entities/UserEntity/UserEntity";
+import { AlreadyExistsError, NotFoundError } from "../../../Domain/Exception";
 import UserModel from "../../Database/Mongoose/Models/User";
 
 export default class UserRepositoryMongo implements IUserRepository {
-  async userAlreadyExists(email: string): Promise<Boolean> {
+  async userAlreadyExists(email: string): Promise<void> {
     const user = await UserModel.findOne({ email });
-    return !!user;
+    if (!user) throw new AlreadyExistsError('User already exist.')
   }
 
   async createUser(user: UserEntity): Promise<Boolean> {
@@ -16,7 +17,7 @@ export default class UserRepositoryMongo implements IUserRepository {
   async fetchByEmail(email: string): Promise<UserEntity> {
     const user = await UserModel.findOne({ email });
     if (!user) {
-      throw new Error("User not found");
+      throw new NotFoundError("User not found");
     }
     return UserEntity.createFromInput(user);
   }

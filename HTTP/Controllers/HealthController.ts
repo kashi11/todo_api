@@ -1,5 +1,5 @@
 import HttpResp from "../utils/HttpResponse";
-import HttpStatusCode from "../../App/Application/Utils/HttpStatusCode";
+import HttpStatusCode from "../../App/Application/Utils/ResponseStatus";
 import { Request, Response } from "express";
 
 
